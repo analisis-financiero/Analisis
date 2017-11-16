@@ -228,7 +228,7 @@ public class libroDiario extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        setSize(new java.awt.Dimension(423, 556));
+        setSize(new java.awt.Dimension(443, 556));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

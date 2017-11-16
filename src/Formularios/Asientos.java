@@ -456,7 +456,7 @@ public class Asientos extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        setSize(new java.awt.Dimension(860, 587));
+        setSize(new java.awt.Dimension(860, 510));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

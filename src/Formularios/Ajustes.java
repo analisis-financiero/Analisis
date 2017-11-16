@@ -457,7 +457,7 @@ public class Ajustes extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        setSize(new java.awt.Dimension(880, 564));
+        setSize(new java.awt.Dimension(880, 501));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

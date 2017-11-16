@@ -140,7 +140,7 @@ public class CrearUsuario extends javax.swing.JFrame {
                     .addComponent(jBcrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,10 +153,10 @@ public class CrearUsuario extends javax.swing.JFrame {
                 .addComponent(jBcrear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCancelar)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(571, 371));
+        setSize(new java.awt.Dimension(407, 269));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

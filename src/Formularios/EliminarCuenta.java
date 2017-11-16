@@ -139,7 +139,7 @@ public class EliminarCuenta extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(401, 409));
+        setSize(new java.awt.Dimension(418, 411));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

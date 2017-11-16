@@ -135,7 +135,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(458, 409));
+        setSize(new java.awt.Dimension(487, 411));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

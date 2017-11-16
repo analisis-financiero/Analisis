@@ -75,7 +75,7 @@ public class Crear_usuario extends javax.swing.JFrame {
                         .addComponent(jTemail, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
                         .addComponent(jPass)
                         .addComponent(jrePass)))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
