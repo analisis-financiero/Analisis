@@ -23,7 +23,11 @@ public class OperacionesEstadosFinancieros {
     private double saldoPasivosFijos = 0;
     private double saldoActivosCorrientes = 0;
     private double saldoActivosFijos = 0;
-    
+//    private double saldoPasivosCorrientesAV = 0;
+//    private double saldoPasivosFijosAV = 0;
+//    private double saldoActivosCorrientesAV = 0;
+//    private double saldoActivosFijosAV = 0;
+//    
 //DE momento
     private double saldoActivos = 0;
     private double saldoPasivo = 0;
@@ -143,53 +147,12 @@ public class OperacionesEstadosFinancieros {
         con.desconectar();
     }
 
-    //Balance General
-    
-    //Balance General
-    public void balanceGeneralActivos(JTable table, int idcatalogo) {
-     //Total activos corrientes
-        try {
-            Statement sentencia = con.conectar().createStatement();
-            ResultSet resultado = sentencia.executeQuery("SELECT * FROM cuenta WHERE (catalogo_idcatalogo ='" + idcatalogo + "') AND (idpadre = 11) ORDER BY idcuenta asc");
-            DefaultTableModel modelAC = new DefaultTableModel();
-            modelAC.addColumn("Nombre");
-            modelAC.addColumn("Valor");
-            int valor = 0;
-            
-            String tipo = "";
-
-            //Valindando depreciacion...
-            while (resultado.next()) {
-                tipo = resultado.getString("saldo_deudor");
-                if (tipo.equals("1")) {
-                    modelAC.addRow(new Object[]{});
-                    modelAC.setValueAt(resultado.getString("nombre"), valor, 0);
-                    modelAC.setValueAt("$" + resultado.getString("valor"), valor, 1);
-                    valor++;
-                    setSaldoActivos(getSaldoActivos() - Double.parseDouble(resultado.getString("valor")));
-                } else {
-                    modelAC.addRow(new Object[]{});
-                    modelAC.setValueAt(resultado.getString("nombre"), valor, 0);
-                    modelAC.setValueAt("$" + resultado.getString("valor"), valor, 1);
-                    valor++;
-                    setSaldoActivos(getSaldoActivos() + Double.parseDouble(resultado.getString("valor")));
-                }
-
-            }
-
-            table.setModel(modelAC);
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        con.desconectar();
-    }
-    
-    
-    
-    
-    
-    public void balanceGeneralActivosCorrientes(JTable table, int idcatalogo) {
-     //Total activos corrientes
+     public void balanceGeneralActivosCorrientes(JTable table, int idcatalogo) {
+         saldoActivosCorrientes = 0;
+         saldoActivosFijos = 0;
+         saldoPasivosCorrientes = 0;
+         saldoPasivosFijos = 0;
+//Total activos corrientes
         try {
             Statement sentencia = con.conectar().createStatement();
             ResultSet resultado = sentencia.executeQuery("SELECT * FROM cuenta WHERE (catalogo_idcatalogo ='" + idcatalogo + "') AND (idpadre = 11) ORDER BY idcuenta asc");
@@ -227,7 +190,10 @@ public class OperacionesEstadosFinancieros {
     }
     
     public void balanceGeneralActivosFijos(JTable table, int idcatalogo) {
-        
+         saldoActivosCorrientes = 0;
+         saldoActivosFijos = 0;
+         saldoPasivosCorrientes = 0;
+         saldoPasivosFijos = 0;
 //Total activos fijos        
         try {
             Statement sentencia = con.conectar().createStatement();
@@ -274,29 +240,13 @@ public class OperacionesEstadosFinancieros {
         
     }
 
-    public void balanceGeneralPasivos(JTable table, int idcatalogo) {
-        try {
-            Statement sentencia = con.conectar().createStatement();
-            ResultSet resultado = sentencia.executeQuery("SELECT * FROM cuenta WHERE (catalogo_idcatalogo = '" + idcatalogo + "') AND (idpadre > 19) AND (idpadre < 30) ORDER BY idcuenta asc");
-            DefaultTableModel model = new DefaultTableModel();
-            model.addColumn("Nombre");
-            model.addColumn("Valor");
-            int valor = 0;
-            while (resultado.next()) {
-                model.addRow(new Object[]{});
-                model.setValueAt(resultado.getString("nombre"), valor, 0);
-                model.setValueAt("$" + resultado.getString("valor"), valor, 1);
-                valor++;
-                setSaldoPasivo(getSaldoPasivo() + Double.parseDouble(resultado.getString("valor")));
-            }
-            table.setModel(model);
-        } catch (Exception e) {
-        }
-        con.desconectar();
-    }
-
     //Para el AVBG
     public void balanceGeneralPasivosCorrientes(JTable table, int idcatalogo) {
+         saldoActivosCorrientes = 0;
+         saldoActivosFijos = 0;
+         saldoPasivosCorrientes = 0;
+         saldoPasivosFijos = 0;
+        
         try {
             Statement sentencia = con.conectar().createStatement();
             ResultSet resultado = sentencia.executeQuery("SELECT * FROM cuenta WHERE (catalogo_idcatalogo = '" + idcatalogo + "') AND (idpadre=21) ORDER BY idcuenta asc");
@@ -319,6 +269,10 @@ public class OperacionesEstadosFinancieros {
 
     
     public void balanceGeneralPasivosFijos(JTable table, int idcatalogo) {
+         saldoActivosCorrientes = 0;
+         saldoActivosFijos = 0;
+         saldoPasivosCorrientes = 0;
+         saldoPasivosFijos = 0;
         try {
             Statement sentencia = con.conectar().createStatement();
             ResultSet resultado = sentencia.executeQuery("SELECT * FROM cuenta WHERE (catalogo_idcatalogo = '" + idcatalogo + "') AND (idpadre = 22) ORDER BY idcuenta asc");
