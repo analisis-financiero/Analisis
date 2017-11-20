@@ -107,27 +107,31 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         jPanel27 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         jScrollPane17 = new javax.swing.JScrollPane();
-        jtActivos6 = new javax.swing.JTable();
+        jtActivosCorrientesAV = new javax.swing.JTable();
         jLabel47 = new javax.swing.JLabel();
-        lblTotalActivosCorrientesAV3 = new javax.swing.JLabel();
+        lblTotalActivosCorrientesAV = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
         jScrollPane18 = new javax.swing.JScrollPane();
-        jtActivos7 = new javax.swing.JTable();
+        jtActivosFijosAV = new javax.swing.JTable();
         jLabel49 = new javax.swing.JLabel();
-        lblTotalActivosFijosAV1 = new javax.swing.JLabel();
+        lblTotalActivosFijosAV = new javax.swing.JLabel();
         jPanel29 = new javax.swing.JPanel();
         jLabel50 = new javax.swing.JLabel();
         jScrollPane19 = new javax.swing.JScrollPane();
-        jtActivos8 = new javax.swing.JTable();
+        jtPasivosCorrientesAV = new javax.swing.JTable();
         jLabel51 = new javax.swing.JLabel();
         lblTotalPasivosCorrientesAV = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
         jLabel56 = new javax.swing.JLabel();
         jScrollPane22 = new javax.swing.JScrollPane();
-        jtActivos11 = new javax.swing.JTable();
+        jtPasivosFijosAV = new javax.swing.JTable();
         jLabel57 = new javax.swing.JLabel();
         lblTotalPasivosFijosAV = new javax.swing.JLabel();
+        lblTotalActivosAV = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblTotalPasivosAV = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         Imprimir = new javax.swing.JButton();
 
@@ -299,7 +303,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addGap(6, 6, 6)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
@@ -614,8 +618,8 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, Short.MAX_VALUE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -626,7 +630,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         jLabel46.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel46.setText("Activos corrientes:");
 
-        jtActivos6.setModel(new javax.swing.table.DefaultTableModel(
+        jtActivosCorrientesAV.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -637,7 +641,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
 
             }
         ));
-        jScrollPane17.setViewportView(jtActivos6);
+        jScrollPane17.setViewportView(jtActivosCorrientesAV);
 
         jLabel47.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel47.setText("Total activos corrientes: ");
@@ -656,7 +660,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                             .addGroup(jPanel27Layout.createSequentialGroup()
                                 .addComponent(jLabel47)
                                 .addGap(18, 18, 18)
-                                .addComponent(lblTotalActivosCorrientesAV3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lblTotalActivosCorrientesAV, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 20, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -670,7 +674,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTotalActivosCorrientesAV3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblTotalActivosCorrientesAV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -679,7 +683,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel48.setText("Activos fijos:");
 
-        jtActivos7.setModel(new javax.swing.table.DefaultTableModel(
+        jtActivosFijosAV.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -690,7 +694,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
 
             }
         ));
-        jScrollPane18.setViewportView(jtActivos7);
+        jScrollPane18.setViewportView(jtActivosFijosAV);
 
         jLabel49.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel49.setText("Total activos fijos: ");
@@ -709,7 +713,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                             .addGroup(jPanel28Layout.createSequentialGroup()
                                 .addComponent(jLabel49)
                                 .addGap(18, 18, 18)
-                                .addComponent(lblTotalActivosFijosAV1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lblTotalActivosFijosAV, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -719,11 +723,11 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addGap(6, 6, 6)
                 .addComponent(jLabel48)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTotalActivosFijosAV1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblTotalActivosFijosAV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -732,7 +736,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         jLabel50.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel50.setText("Pasivos corrientes:");
 
-        jtActivos8.setModel(new javax.swing.table.DefaultTableModel(
+        jtPasivosCorrientesAV.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -743,7 +747,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
 
             }
         ));
-        jScrollPane19.setViewportView(jtActivos8);
+        jScrollPane19.setViewportView(jtPasivosCorrientesAV);
 
         jLabel51.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel51.setText("Total pasivos corrientes: ");
@@ -785,7 +789,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         jLabel56.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel56.setText("Pasivos fijos:");
 
-        jtActivos11.setModel(new javax.swing.table.DefaultTableModel(
+        jtPasivosFijosAV.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -796,7 +800,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
 
             }
         ));
-        jScrollPane22.setViewportView(jtActivos11);
+        jScrollPane22.setViewportView(jtPasivosFijosAV);
 
         jLabel57.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel57.setText("Total pasivos fijos: ");
@@ -825,13 +829,17 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addGap(6, 6, 6)
                 .addComponent(jLabel56)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTotalPasivosFijosAV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
+
+        jLabel2.setText("Total activos:");
+
+        jLabel3.setText("Total pasivos:");
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -840,12 +848,24 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel26Layout.createSequentialGroup()
+                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel26Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel2)
+                        .addGap(32, 32, 32)
+                        .addComponent(lblTotalActivosAV, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(100, 100, 100)
+                        .addComponent(jLabel3)
+                        .addGap(67, 67, 67)
+                        .addComponent(lblTotalPasivosAV, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel26Layout.setVerticalGroup(
@@ -856,10 +876,16 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                     .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(22, 22, 22)
-                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(32, 32, 32)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                    .addComponent(lblTotalActivosAV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblTotalPasivosAV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Análisis vertical BG", jPanel26);
@@ -891,21 +917,18 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(64, 64, 64)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(Imprimir)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 324, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jlNombreEmpresa)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE))))
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jlNombreEmpresa))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(Imprimir)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(tipoUsuario)
                 .addGap(605, 605, 605)
                 .addComponent(idCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -915,24 +938,24 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
             .addGroup(layout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addComponent(tipoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(idCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(427, 427, 427))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlNombreEmpresa)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane5)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Imprimir)
                     .addComponent(btnSalir))
-                .addGap(21, 21, 21))
+                .addGap(29, 29, 29))
         );
 
-        setSize(new java.awt.Dimension(636, 558));
+        setSize(new java.awt.Dimension(636, 720));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1002,7 +1025,6 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         jlCapital.setText("$" + capital);
 
         op.balanceGeneralActivos(jtActivos, id_catalogo);
-
         BigDecimal saldoActivos = new BigDecimal(String.valueOf(op.getSaldoActivos()));
         saldoActivos = saldoActivos.setScale(2, RoundingMode.HALF_UP);
         jlTotalActivos.setText("$" + saldoActivos);
@@ -1015,6 +1037,34 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         jlTotalPasivos.setText("$" + saldoPasivos);
         capital = capital.add(saldoPasivos);
         jlTotalLadoPasivosCapital.setText("$" + capital);
+        
+        //Para el analisis vertical BG
+        op.balanceGeneralActivosCorrientes(jtActivosCorrientesAV, id_catalogo);
+        BigDecimal saldoActivosCorrientesAV = new BigDecimal(String.valueOf(op.getSaldoActivosCorrientes()));
+        saldoActivosCorrientesAV = saldoActivosCorrientesAV.setScale(2, RoundingMode.HALF_UP);
+        lblTotalActivosCorrientesAV.setText("$" + saldoActivosCorrientesAV);
+        //jlTotalLadoActivos.setText("$" + saldoActivos);
+        
+        op.balanceGeneralActivosFijos(jtActivosFijosAV, id_catalogo);
+        BigDecimal saldoActivosFijosAV = new BigDecimal(String.valueOf(op.getSaldoActivosFijos()));
+        saldoActivosFijosAV = saldoActivosFijosAV.setScale(2, RoundingMode.HALF_UP);
+        lblTotalActivosFijosAV.setText("$" + saldoActivosFijosAV);
+        lblTotalActivosAV.setText("$" + (saldoActivosCorrientesAV.doubleValue() + saldoActivosFijosAV.doubleValue()));
+        
+        op.balanceGeneralPasivosCorrientes(jtPasivosCorrientesAV, id_catalogo);
+        BigDecimal saldoPasivosCorrientesAV = new BigDecimal(String.valueOf(op.getSaldoPasivosCorrientes()));
+        saldoPasivosCorrientesAV = saldoPasivosCorrientesAV.setScale(2, RoundingMode.HALF_UP);
+        lblTotalPasivosCorrientesAV.setText("$" + saldoPasivosCorrientesAV);
+        
+        op.balanceGeneralPasivosFijos(jtPasivosFijosAV, id_catalogo);
+        BigDecimal saldoPasivosFijosAV = new BigDecimal(String.valueOf(op.getSaldoPasivosFijos()));
+        saldoPasivosFijosAV = saldoPasivosFijosAV.setScale(2, RoundingMode.HALF_UP);
+        lblTotalPasivosFijosAV.setText("$" + saldoPasivosFijosAV);
+        lblTotalPasivosAV.setText("$" + (saldoPasivosCorrientesAV.doubleValue() + saldoPasivosFijosAV.doubleValue()));
+        
+        
+        
+        
     }
     
   
@@ -1076,7 +1126,9 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
@@ -1085,10 +1137,6 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel6;
@@ -1104,8 +1152,6 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1119,8 +1165,6 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane20;
-    private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1141,21 +1185,19 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JLabel jlUtilidad;
     private javax.swing.JLabel jlUtilidadEstadoResultado;
     private javax.swing.JTable jtActivos;
-    private javax.swing.JTable jtActivos10;
-    private javax.swing.JTable jtActivos11;
-    private javax.swing.JTable jtActivos6;
-    private javax.swing.JTable jtActivos7;
-    private javax.swing.JTable jtActivos8;
-    private javax.swing.JTable jtActivos9;
+    private javax.swing.JTable jtActivosCorrientesAV;
+    private javax.swing.JTable jtActivosFijosAV;
     private javax.swing.JTable jtCapitalesEstadoResultado;
     private javax.swing.JTable jtGastosEstadoResultados;
     private javax.swing.JTable jtIngresosEstadoResultado;
     private javax.swing.JTable jtPasivos;
+    private javax.swing.JTable jtPasivosCorrientesAV;
+    private javax.swing.JTable jtPasivosFijosAV;
     private javax.swing.JTable jtRetiros;
-    private javax.swing.JLabel lblTotalActivosCorrientesAV3;
-    private javax.swing.JLabel lblTotalActivosCorrientesAV5;
-    private javax.swing.JLabel lblTotalActivosCorrientesAV6;
-    private javax.swing.JLabel lblTotalActivosFijosAV1;
+    private javax.swing.JLabel lblTotalActivosAV;
+    private javax.swing.JLabel lblTotalActivosCorrientesAV;
+    private javax.swing.JLabel lblTotalActivosFijosAV;
+    private javax.swing.JLabel lblTotalPasivosAV;
     private javax.swing.JLabel lblTotalPasivosCorrientesAV;
     private javax.swing.JLabel lblTotalPasivosFijosAV;
     public static final javax.swing.JLabel tipoUsuario = new javax.swing.JLabel();
