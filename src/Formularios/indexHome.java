@@ -80,7 +80,7 @@ public class indexHome extends javax.swing.JFrame {
         idCatalogoGlobal.setForeground(new java.awt.Color(240, 240, 240));
 
         jLabel1.setBackground(new java.awt.Color(0, 210, 40));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/binmoney.jpg"))); // NOI18N
 
         tipoUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -122,6 +122,11 @@ public class indexHome extends javax.swing.JFrame {
         jmEstadosFinancieros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jmEstadosFinancierosMouseClicked(evt);
+            }
+        });
+        jmEstadosFinancieros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmEstadosFinancierosActionPerformed(evt);
             }
         });
         jMenuBar1.add(jmEstadosFinancieros);
@@ -277,18 +282,22 @@ public class indexHome extends javax.swing.JFrame {
                 .addComponent(idCatalogoGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tipoUsuario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
                 .addComponent(nombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jlNombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -864,6 +873,10 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         this.hide();
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jmEstadosFinancierosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmEstadosFinancierosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmEstadosFinancierosActionPerformed
 
     /**
      * @param args the command line arguments

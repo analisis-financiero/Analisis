@@ -13,6 +13,9 @@ public class RazonesLiquidez {
     public double capitalTrabajo(double activoCirculante, double pasivoCirculante) {
         double capitalTrabajo = 0.00;
         capitalTrabajo = (activoCirculante) - (pasivoCirculante);
+        
+        System.out.println("ACT CIR: " + activoCirculante);
+        System.out.println("PAS CIR: " + pasivoCirculante);
         return capitalTrabajo;
     }
 

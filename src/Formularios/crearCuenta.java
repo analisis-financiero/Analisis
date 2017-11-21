@@ -239,12 +239,17 @@ public class crearCuenta extends javax.swing.JFrame {
             int idcatalogo = Integer.parseInt(idCatalogo.getText().trim());
 
             Cuenta cuen = new Cuenta(id_cuenta, jTnombre.getText(), valor, id_padre, idcatalogo, tipo_saldo);
-            op.almacenarCuenta(cuen);
-          
-            /* jTId_cuenta.setText("");
+            try{
+                op.almacenarCuenta(cuen);
+            }catch(Exception ex){
+                System.out.println("Problemas al crear cuenta "+ex);
+            }
+            
+            jTId_cuenta.setText("");
             jTnombre.setText("");
             jTId_padre.setText("");
-            jTValor.setText("");*/
+            jTValor.setText("");
+            jTId_cuenta.requestFocus();
         }
     }//GEN-LAST:event_btnAgregarCuentaActionPerformed
 
