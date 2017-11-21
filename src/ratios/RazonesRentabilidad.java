@@ -11,6 +11,7 @@ package ratios;
 public class RazonesRentabilidad {
     
     public double marUtilidadBruta(double ventas, double costoVentas){
+        System.out.println("LLEGAAAA");
         double marUtiBruta = 0.00;
         marUtiBruta = (ventas - costoVentas)/ventas;
         return marUtiBruta;
@@ -37,6 +38,8 @@ public class RazonesRentabilidad {
     public double rendSobActivos(double utiNeta, double totActivos){
         double RSA = 0.00;
         RSA = utiNeta/totActivos;
+        System.out.println("UT NETA: " + utiNeta);
+        System.out.println("TOT ACTIVOS: " + totActivos);
         return RSA;
     }
     

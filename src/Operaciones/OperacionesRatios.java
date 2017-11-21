@@ -238,7 +238,7 @@ public class OperacionesRatios {
     public void SaldoCostodeVentas(int idCatalogo) {
         try {
             Statement sentencia = con.conectar().createStatement();
-            ResultSet resultado = sentencia.executeQuery("SELECT valor FROM cuenta WHERE (catalogo_idcatalogo ='" + idCatalogo + "') AND (idpadre = 7) AND nombre like '%Costo%'");
+            ResultSet resultado = sentencia.executeQuery("SELECT valor FROM cuenta WHERE (catalogo_idcatalogo ='" + idCatalogo + "') AND (idpadre = 5) AND nombre like '%Costo%'");
             int valor = 0;
 
             while (resultado.next()) {

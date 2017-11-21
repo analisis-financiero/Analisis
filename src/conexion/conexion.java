@@ -8,7 +8,7 @@ import javax.swing.*;
 
 public class conexion {
 
-    private String password = "root";
+    private String password = "admin";
     private String usuario = "root";
     private String direccionServidor = "localhost";
     private String nombreBaseDatos = "conta2";

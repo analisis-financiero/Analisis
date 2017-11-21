@@ -159,6 +159,10 @@ public class RatiosForm extends javax.swing.JFrame {
         btnQueFondoManiobra = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jlFondomaniobra = new javax.swing.JLabel();
+        jPanel26 = new javax.swing.JPanel();
+        btnqueRazonAcida = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        jlrazonAcida = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         jMenu1.setText("File");
@@ -243,7 +247,7 @@ public class RatiosForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlEudeudamientoCorto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                     .addComponent(btnQueEndeudamientoCorto, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -284,7 +288,7 @@ public class RatiosForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlEndeudamientoLargo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                     .addComponent(btnQueEndeudamientoLargo, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -503,7 +507,7 @@ public class RatiosForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlCapitalizacionInterna, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                     .addComponent(btnQueCapInter, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1107,7 +1111,7 @@ public class RatiosForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel45)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlrendSobPatrimonio, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(jlrendSobPatrimonio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRendimientoSobreCapital)
                 .addContainerGap())
@@ -1155,7 +1159,7 @@ public class RatiosForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlrenSobCapTrabajo, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(jlrenSobCapTrabajo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRendimientoSobreCapitalTrabajo)
                 .addContainerGap())
@@ -1263,9 +1267,9 @@ public class RatiosForm extends javax.swing.JFrame {
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlrazonCirculante, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                    .addComponent(btnqueRazonCirculante, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))
+                    .addComponent(jlrazonCirculante, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                    .addComponent(btnqueRazonCirculante, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel22Layout.setVerticalGroup(
@@ -1320,6 +1324,49 @@ public class RatiosForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel26.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        btnqueRazonAcida.setText("¿Que es esto??");
+        btnqueRazonAcida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnqueRazonAcidaActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Razon ácida");
+
+        jlrazonAcida.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jlrazonAcida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlrazonAcida.setText("No disponible");
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel26Layout.createSequentialGroup()
+                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlrazonAcida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnqueRazonAcida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlrazonAcida, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnqueRazonAcida)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1328,7 +1375,9 @@ public class RatiosForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -1336,12 +1385,14 @@ public class RatiosForm extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(19, 19, 19)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Liquidez", jPanel3);
@@ -1367,17 +1418,17 @@ public class RatiosForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 716, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jlNombreEmpresa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(tipoUsuario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(idCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 18, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -1395,10 +1446,10 @@ public class RatiosForm extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(740, 438));
+        setSize(new java.awt.Dimension(710, 414));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1627,16 +1678,27 @@ public class RatiosForm extends javax.swing.JFrame {
                 + "Rendimiento sobre Capital de Trabajo = Utilidad Neta / Capital Trabajo", "Rendimiento sobre Capital Trabajo", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnRendimientoSobreCapitalTrabajoActionPerformed
 
+    private void btnqueRazonAcidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnqueRazonAcidaActionPerformed
+        // Razón ácida...:
+        JOptionPane.showMessageDialog(null, ""
+                + "Es uno de los indicadores financieros utilizados para medir la liquidez de una empresa y\n"
+                + "para medir su capacidad de pago.\n\n"
+                + "Razón ácida = Activo circulante - Inventarios / Pasivo Circulante", "Razón ácida", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnqueRazonAcidaActionPerformed
+
     public void mostrarRatios() {
 
         //APLACAMIENTOSS!!!!:
         try {
+            tablo.SaldoInventario(Integer.parseInt(idCatalogo.getText()));
             tablo.TotalPasivos(Integer.parseInt(idCatalogo.getText()));
             tablo.TotalActivos(Integer.parseInt(idCatalogo.getText()));
             BigDecimal deuda = new BigDecimal(String.valueOf(moyo.endeudamiento(tablo.getSaldoPasivo(), tablo.getSaldoActivos())));
             deuda = deuda.setScale(2, RoundingMode.HALF_UP);
 
             jlEudeudamiento.setText("" + deuda + "%");
+
+            tablo.TotalActivosCirculantes(Integer.parseInt(idCatalogo.getText()));
 
             tablo.TotalPasivosCirculantes(Integer.parseInt(idCatalogo.getText()));
             BigDecimal deudaCorto = new BigDecimal(String.valueOf(moyo.endeudamientoCorto(tablo.getSaldoPasivosCirculantes(), tablo.getSaldoActivos())));
@@ -1677,15 +1739,19 @@ public class RatiosForm extends javax.swing.JFrame {
             jlCapitalizacionInterna.setText("" + capitalizacionI + "%");
 
             //LIQUIDEZ!!!!:
-            BigDecimal capitalt = new BigDecimal(String.valueOf(yome.capitalTrabajo(tablo.getSaldoActivos(), tablo.getSaldoPasivo())));
+            BigDecimal capitalt = new BigDecimal(String.valueOf(yome.capitalTrabajo(tablo.getSaldoActivosCirculantes(), tablo.getSaldoPasivosCirculantes())));
             capitalt = capitalt.setScale(2, RoundingMode.HALF_UP);
             jlCapitaltrabajo.setText("" + capitalt);
-
 
             BigDecimal razonc = new BigDecimal(String.valueOf(yome.razonCirculante(tablo.getSaldoActivosCirculantes(), tablo.getSaldoPasivosCirculantes())));
             razonc = razonc.setScale(2, RoundingMode.HALF_UP);
 
             jlrazonCirculante.setText("" + razonc + "%");
+
+            BigDecimal razonacida = new BigDecimal(String.valueOf(yome.razonAcida(tablo.getSaldoActivosCirculantes(), tablo.getSaldoPasivosCirculantes(), tablo.getSaldoInventario())));
+            razonacida = razonacida.setScale(2, RoundingMode.HALF_UP);
+
+            jlrazonAcida.setText("" + razonacida + "%");
 
             BigDecimal razonfm = new BigDecimal(String.valueOf(yome.fondoManiobra(tablo.getSaldoActivosCirculantes(), tablo.getSaldoPasivosCirculantes(), tablo.getSaldoActivos())));
             razonfm = razonfm.setScale(2, RoundingMode.HALF_UP);
@@ -1693,8 +1759,6 @@ public class RatiosForm extends javax.swing.JFrame {
             jlFondomaniobra.setText("" + razonfm + "%");
 
             // GERENCIALES!!!!! :O
-
-            tablo.SaldoInventario(Integer.parseInt(idCatalogo.getText()));
             tablo.SaldoVentas(Integer.parseInt(idCatalogo.getText()));
             tablo.SaldoCxC(Integer.parseInt(idCatalogo.getText()));
             tablo.SaldoCxP(Integer.parseInt(idCatalogo.getText()));
@@ -1717,19 +1781,21 @@ public class RatiosForm extends javax.swing.JFrame {
             razonrCxC = razonrCxC.setScale(2, RoundingMode.HALF_UP);
             jlRotacionDeCuentasPorCobrar.setText("" + razonrCxC + "");
 
-
-
             BigDecimal razonrAT = new BigDecimal(String.valueOf(ever.rotacionActivoTotal(tablo.getSaldoVentas(), tablo.getSaldoActivos())));
             razonrAT = razonrAT.setScale(2, RoundingMode.HALF_UP);
             jlRotacionActivoTotal.setText("" + razonrAT + "");
 
-            BigDecimal razondCxP = new BigDecimal(String.valueOf(ever.diasCxP(tablo.getSaldoCxP(), tablo.getSaldoCompras())));
-            razondCxP = razondCxP.setScale(2, RoundingMode.HALF_UP);
-            jlDiasdeCuentasporPagar.setText("" + razondCxP + "");
-
-            BigDecimal razonrCxP = new BigDecimal(String.valueOf(ever.rotacionCxP(tablo.getSaldoCompras(), tablo.getSaldoCxP())));
-            razonrCxP = razonrCxP.setScale(2, RoundingMode.HALF_UP);
-            jlRotaciondeCuentasporPagar.setText("" + razonrCxP + "");
+            
+            try {
+                BigDecimal razondCxP = new BigDecimal(String.valueOf(ever.diasCxP(tablo.getSaldoCxP(), tablo.getSaldoCompras())));
+                razondCxP = razondCxP.setScale(2, RoundingMode.HALF_UP);
+                jlDiasdeCuentasporPagar.setText("" + razondCxP + "");
+                BigDecimal razonrCxP = new BigDecimal(String.valueOf(ever.rotacionCxP(tablo.getSaldoCompras(), tablo.getSaldoCxP())));
+                razonrCxP = razonrCxP.setScale(2, RoundingMode.HALF_UP);
+                jlRotaciondeCuentasporPagar.setText("" + razonrCxP + "");
+            } catch (Exception e) {
+                
+            }
 
             //Razones de Rentabilidad ¬¬
             tablo.SaldoCostodeVentas(Integer.parseInt(idCatalogo.getText()));
@@ -1754,10 +1820,10 @@ public class RatiosForm extends javax.swing.JFrame {
             BigDecimal razonmarSCP = new BigDecimal(String.valueOf(never.renSobCapTrabajo(tablo.getSaldoActivosCirculantes(), tablo.getSaldoPasivosCirculantes(), tablo.getUtilidadneta())));
             razonmarSCP = razonmarSCP.setScale(2, RoundingMode.HALF_UP);
             jlrenSobCapTrabajo.setText("" + razonmarSCP + "");
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "No hay datos suficientes para realizar todos los Ratios\n"
-                    + "Probablemente no posee ciertas cuentas necesarios para los calculos", "Información", JOptionPane.INFORMATION_MESSAGE);
+                    + "Probablemente no posee ciertas cuentas necesarios para los calculos\n" + e.getMessage(), "Información", JOptionPane.INFORMATION_MESSAGE);
         }
 
     }
@@ -1845,7 +1911,10 @@ public class RatiosForm extends javax.swing.JFrame {
     private javax.swing.JButton btnRotacionInventarios;
     private javax.swing.JButton btnUtilidadBruta;
     private javax.swing.JButton btnUtilidadNeta;
+    private javax.swing.JButton btnqueRazonAcida;
     private javax.swing.JButton btnqueRazonCirculante;
+    private javax.swing.JButton btnqueRazonCirculante1;
+    private javax.swing.JButton btnqueRazonCirculante2;
     public static final javax.swing.JLabel idCatalogo = new javax.swing.JLabel();
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -1853,6 +1922,8 @@ public class RatiosForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -1861,6 +1932,7 @@ public class RatiosForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
@@ -1892,7 +1964,10 @@ public class RatiosForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel35;
@@ -1933,7 +2008,10 @@ public class RatiosForm extends javax.swing.JFrame {
     private javax.swing.JLabel jlRotaciondeCuentasporPagar;
     private javax.swing.JLabel jlUtilidadBruta;
     private javax.swing.JLabel jlUtilidadNeta;
+    private javax.swing.JLabel jlrazonAcida;
     private javax.swing.JLabel jlrazonCirculante;
+    private javax.swing.JLabel jlrazonCirculante1;
+    private javax.swing.JLabel jlrazonCirculante2;
     private javax.swing.JLabel jlrenSobCapTrabajo;
     private javax.swing.JLabel jlrendSobActivos;
     private javax.swing.JLabel jlrendSobPatrimonio;
