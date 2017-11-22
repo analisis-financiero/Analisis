@@ -20,6 +20,8 @@ import java.util.logging.Logger;
 import javax.print.attribute.standard.PrinterName;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -36,7 +38,8 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable {
         initComponents();
         this.setIconImage(new ImageIcon(getClass().getResource("/icons/coins.png")).getImage());
         jPinicioER.setVisible(false);
-        ;
+        lblMCodigo.setVisible(false);
+        
     }
 
     /**
@@ -1311,6 +1314,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable {
          if (txtMCuenta.getText().trim().isEmpty() || txtMIdPadre.getText().trim().isEmpty() || txtMSaldo.getText().trim().isEmpty() || lblMCodigo.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "No ha ingresado todos los valores", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
+             int id_catalogo = Integer.parseInt(idCatalogo.getText());
 
             int id_cuenta = Integer.parseInt(lblMCodigo.getText());
             int id_padre = Integer.parseInt(txtMIdPadre.getText());
@@ -1334,6 +1338,10 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable {
             }
             
             limpiarModificar();
+            DefaultTableModel model = new DefaultTableModel();
+            jTModificar.setModel(model);
+            op.allCuentas(jTModificar, id_catalogo);
+            
         }
     }//GEN-LAST:event_btnMModificarActionPerformed
 
