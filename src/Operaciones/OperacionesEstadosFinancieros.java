@@ -23,6 +23,15 @@ public class OperacionesEstadosFinancieros {
     private double saldoPasivosFijos = 0;
     private double saldoActivosCorrientes = 0;
     private double saldoActivosFijos = 0;
+    private double saldoCapitalAV = 0;
+
+    public double getSaldoCapitalAV() {
+        return saldoCapitalAV;
+    }
+
+    public void setSaldoCapitalAV(double saldoCapitalAV) {
+        this.saldoCapitalAV = saldoCapitalAV;
+    }
 //    private double saldoPasivosCorrientesAV = 0;
 //    private double saldoPasivosFijosAV = 0;
 //    private double saldoActivosCorrientesAV = 0;
@@ -49,13 +58,13 @@ public class OperacionesEstadosFinancieros {
 
             model.addColumn("Nombre");
             model.addColumn("Valor");
-
+model.addColumn("Porcentaje");
             int valor = 0;
 
             while (resultado.next()) {
                 model.addRow(new Object[]{});
                 model.setValueAt(resultado.getString("nombre"), valor, 0);
-                model.setValueAt("$" + resultado.getString("valor"), valor, 1);
+                model.setValueAt("" + resultado.getString("valor"), valor, 1);
                 valor++;
 
                 setTotalIngresos(getTotalIngresos() + Double.parseDouble(resultado.getString("valor")));
@@ -77,13 +86,13 @@ public class OperacionesEstadosFinancieros {
 
             model.addColumn("Nombre");
             model.addColumn("Valor");
-
+model.addColumn("Porcentaje");
             int valor = 0;
 
             while (resultado.next()) {
                 model.addRow(new Object[]{});
                 model.setValueAt(resultado.getString("nombre"), valor, 0);
-                model.setValueAt("$" + resultado.getString("valor"), valor, 1);
+                model.setValueAt("" + resultado.getString("valor"), valor, 1);
                 valor++;
 
                 setTotalGastos(getTotalGastos() + Double.parseDouble(resultado.getString("valor")));
@@ -148,10 +157,7 @@ public class OperacionesEstadosFinancieros {
     }
 
      public void balanceGeneralActivosCorrientes(JTable table, int idcatalogo) {
-         saldoActivosCorrientes = 0;
-         saldoActivosFijos = 0;
-         saldoPasivosCorrientes = 0;
-         saldoPasivosFijos = 0;
+       
 //Total activos corrientes
         try {
             Statement sentencia = con.conectar().createStatement();
@@ -159,6 +165,7 @@ public class OperacionesEstadosFinancieros {
             DefaultTableModel modelAC = new DefaultTableModel();
             modelAC.addColumn("Nombre");
             modelAC.addColumn("Valor");
+            modelAC.addColumn("Porcentaje");
             int valor = 0;
             
             String tipo = "";
@@ -169,13 +176,13 @@ public class OperacionesEstadosFinancieros {
                 if (tipo.equals("1")) {
                     modelAC.addRow(new Object[]{});
                     modelAC.setValueAt(resultado.getString("nombre"), valor, 0);
-                    modelAC.setValueAt("$" + resultado.getString("valor"), valor, 1);
+                    modelAC.setValueAt("" + resultado.getString("valor"), valor, 1);
                     valor++;
                     setSaldoActivosCorrientes(getSaldoActivosCorrientes()- Double.parseDouble(resultado.getString("valor")));
                 } else {
                     modelAC.addRow(new Object[]{});
                     modelAC.setValueAt(resultado.getString("nombre"), valor, 0);
-                    modelAC.setValueAt("$" + resultado.getString("valor"), valor, 1);
+                    modelAC.setValueAt("" + resultado.getString("valor"), valor, 1);
                     valor++;
                     setSaldoActivosCorrientes(getSaldoActivosCorrientes()+ Double.parseDouble(resultado.getString("valor")));
                 }
@@ -190,10 +197,7 @@ public class OperacionesEstadosFinancieros {
     }
     
     public void balanceGeneralActivosFijos(JTable table, int idcatalogo) {
-         saldoActivosCorrientes = 0;
-         saldoActivosFijos = 0;
-         saldoPasivosCorrientes = 0;
-         saldoPasivosFijos = 0;
+      
 //Total activos fijos        
         try {
             Statement sentencia = con.conectar().createStatement();
@@ -201,6 +205,7 @@ public class OperacionesEstadosFinancieros {
             DefaultTableModel modelAF = new DefaultTableModel();
             modelAF.addColumn("Nombre");
             modelAF.addColumn("Valor");
+            modelAF.addColumn("Porcentaje");
             int valor = 0;
             
             String tipo = "";
@@ -211,13 +216,13 @@ public class OperacionesEstadosFinancieros {
                 if (tipo.equals("1")) {
                     modelAF.addRow(new Object[]{});
                     modelAF.setValueAt(resultado.getString("nombre"), valor, 0);
-                    modelAF.setValueAt("$" + resultado.getString("valor"), valor, 1);
+                    modelAF.setValueAt("" + resultado.getString("valor"), valor, 1);
                     valor++;
                     setSaldoActivosFijos(getSaldoActivosFijos()- Double.parseDouble(resultado.getString("valor")));
                 } else {
                     modelAF.addRow(new Object[]{});
                     modelAF.setValueAt(resultado.getString("nombre"), valor, 0);
-                    modelAF.setValueAt("$" + resultado.getString("valor"), valor, 1);
+                    modelAF.setValueAt("" + resultado.getString("valor"), valor, 1);
                     valor++;
                     setSaldoActivosFijos(getSaldoActivosFijos()+ Double.parseDouble(resultado.getString("valor")));
                 }
@@ -242,22 +247,19 @@ public class OperacionesEstadosFinancieros {
 
     //Para el AVBG
     public void balanceGeneralPasivosCorrientes(JTable table, int idcatalogo) {
-         saldoActivosCorrientes = 0;
-         saldoActivosFijos = 0;
-         saldoPasivosCorrientes = 0;
-         saldoPasivosFijos = 0;
-        
+       
         try {
             Statement sentencia = con.conectar().createStatement();
             ResultSet resultado = sentencia.executeQuery("SELECT * FROM cuenta WHERE (catalogo_idcatalogo = '" + idcatalogo + "') AND (idpadre=21) ORDER BY idcuenta asc");
             DefaultTableModel model = new DefaultTableModel();
             model.addColumn("Nombre");
             model.addColumn("Valor");
+            model.addColumn("Porcentaje");
             int valor = 0;
             while (resultado.next()) {
                 model.addRow(new Object[]{});
                 model.setValueAt(resultado.getString("nombre"), valor, 0);
-                model.setValueAt("$" + resultado.getString("valor"), valor, 1);
+                model.setValueAt("" + resultado.getString("valor"), valor, 1);
                 valor++;
                 setSaldoPasivosCorrientes(getSaldoPasivosCorrientes()+ Double.parseDouble(resultado.getString("valor")));
             }
@@ -269,21 +271,19 @@ public class OperacionesEstadosFinancieros {
 
     
     public void balanceGeneralPasivosFijos(JTable table, int idcatalogo) {
-         saldoActivosCorrientes = 0;
-         saldoActivosFijos = 0;
-         saldoPasivosCorrientes = 0;
-         saldoPasivosFijos = 0;
+       
         try {
             Statement sentencia = con.conectar().createStatement();
             ResultSet resultado = sentencia.executeQuery("SELECT * FROM cuenta WHERE (catalogo_idcatalogo = '" + idcatalogo + "') AND (idpadre = 22) ORDER BY idcuenta asc");
             DefaultTableModel model = new DefaultTableModel();
             model.addColumn("Nombre");
             model.addColumn("Valor");
+            model.addColumn("Porcentaje");
             int valor = 0;
             while (resultado.next()) {
                 model.addRow(new Object[]{});
                 model.setValueAt(resultado.getString("nombre"), valor, 0);
-                model.setValueAt("$" + resultado.getString("valor"), valor, 1);
+                model.setValueAt("" + resultado.getString("valor"), valor, 1);
                 valor++;
                 setSaldoPasivosFijos(getSaldoPasivosFijos()+ Double.parseDouble(resultado.getString("valor")));
             }
@@ -294,7 +294,29 @@ public class OperacionesEstadosFinancieros {
     }
 
     
-    
+     public void balanceGeneralCapital(JTable table, int idcatalogo) {
+     
+        try {
+            Statement sentencia = con.conectar().createStatement();
+            ResultSet resultado = sentencia.executeQuery("SELECT * FROM cuenta WHERE (catalogo_idcatalogo = '" + idcatalogo + "') AND (idpadre = 3) ORDER BY idcuenta asc");
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("Nombre");
+            model.addColumn("Valor");
+            model.addColumn("Porcentaje");
+            int valor = 0;
+            while (resultado.next()) {
+                model.addRow(new Object[]{});
+                model.setValueAt(resultado.getString("nombre"), valor, 0);
+                model.setValueAt("" + resultado.getString("valor"), valor, 1);
+                valor++;
+                setSaldoCapitalAV(getSaldoCapitalAV()+ Double.parseDouble(resultado.getString("valor")));
+            }
+            table.setModel(model);
+        } catch (Exception e) {
+        }
+        con.desconectar();
+    }
+
     
     
     
