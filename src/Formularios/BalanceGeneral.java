@@ -1127,25 +1127,22 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable {
         jlUtilidadEstadoResultado.setText("$" + utilidad);
         jlUtilidad.setText("$" + utilidad);
 
-             double valors = 0;
+        double valors = 0;
         double u = op.getTotalIngresos();
     
         for(int i=0;i<jtIngresosEstadoResultado.getRowCount();i++){
         valors = ((Double.parseDouble(jtIngresosEstadoResultado.getModel().getValueAt(i, 1).toString())*100)/u);
-        df.format(valors);
-        jtIngresosEstadoResultado.getModel().setValueAt((valors+"%"),i ,2);
+        jtIngresosEstadoResultado.getModel().setValueAt((df.format(valors)+"%"),i ,2);
         }
         
         for(int i=0;i<jtGastosEstadoResultados.getRowCount();i++){
         valors = ((Double.parseDouble(jtGastosEstadoResultados.getModel().getValueAt(i, 1).toString())*100)/u);
-        df.format(valors);
-        jtGastosEstadoResultados.getModel().setValueAt((valors+"%"),i ,2);
+        jtGastosEstadoResultados.getModel().setValueAt((df.format(valors)+"%"),i ,2);
         }
          
         lblIngresosAV.setText(df.format((op.getTotalIngresos()*100)/u)+"%");
         lblGastosAV.setText(df.format((op.getTotalGastos()*100)/u)+"%");
-        lblUtilidadAV.setText(df.format((utilidad.doubleValue()*100)/u));
-        
+        lblUtilidadAV.setText(df.format((utilidad.doubleValue()*100)/u)+"%");
         
         
         op.VariacionCapital(jtCapitalesEstadoResultado, id_catalogo);
@@ -1211,33 +1208,28 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable {
                
         for(int i=0;i<jtActivosCorrientesBG.getRowCount();i++){
         valor = ((Double.parseDouble(jtActivosCorrientesBG.getModel().getValueAt(i, 1).toString())*100)/p);
-        df.format(valor);
-        jtActivosCorrientesBG.getModel().setValueAt((valor+"%"),i ,2);
+        jtActivosCorrientesBG.getModel().setValueAt((df.format(valor)+"%"),i ,2);
         }
         
                
         for(int i=0;i<jtActivosFijosBG.getRowCount();i++){
         valor = ((Double.parseDouble(jtActivosFijosBG.getModel().getValueAt(i, 1).toString())*100)/p);
-        df.format(valor);
-        jtActivosFijosBG.getModel().setValueAt((valor+"%"),i ,2);
+        jtActivosFijosBG.getModel().setValueAt((df.format(valor)+"%"),i ,2);
         }
         
         for(int i=0;i<jtPasivosCorrientesBG.getRowCount();i++){
         valor = ((Double.parseDouble(jtPasivosCorrientesBG.getModel().getValueAt(i, 1).toString())*100)/p);
-        df.format(valor);
-        jtPasivosCorrientesBG.getModel().setValueAt((valor+"%"),i ,2);
+        jtPasivosCorrientesBG.getModel().setValueAt((df.format(valor)+"%"),i ,2);
         }
         
         for(int i=0;i<jtPasivosFijosBG.getRowCount();i++){
         valor = ((Double.parseDouble(jtPasivosFijosBG.getModel().getValueAt(i, 1).toString())*100)/p);
-        df.format(valor);
-        jtPasivosFijosBG.getModel().setValueAt((valor+"%"),i ,2);
+        jtPasivosFijosBG.getModel().setValueAt((df.format(valor)+"%"),i ,2);
         }
         
         for(int i=0;i<jtCapitalContableBG.getRowCount();i++){
         valor = ((Double.parseDouble(jtCapitalContableBG.getModel().getValueAt(i, 1).toString())*100)/p);
-        df.format(valor);
-        jtCapitalContableBG.getModel().setValueAt((valor+"%"),i ,2);
+        jtCapitalContableBG.getModel().setValueAt((df.format(valor)+"%"),i ,2);
         }
         
 //      lblPasivosCorrientesAV.setText("%"+());
