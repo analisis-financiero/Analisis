@@ -89,7 +89,7 @@ public class OperacionesBalanceGeneral {
         }
         con.desconectar();
     }
-
+     
     /**
      * @return the saldoCapital
      */

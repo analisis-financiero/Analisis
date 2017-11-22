@@ -293,6 +293,7 @@ model.addColumn("Porcentaje");
         con.desconectar();
     }
 
+
     
      public void balanceGeneralCapital(JTable table, int idcatalogo) {
      
@@ -313,11 +314,53 @@ model.addColumn("Porcentaje");
             }
             table.setModel(model);
         } catch (Exception e) {
+            
+            
+            con.desconectar();
+            
+        }
+     }
+
+     public void allCuentas(JTable table, int idCatalogo) {
+        try {
+            Statement sentencia = null;
+            ResultSet resultado = null;
+
+            sentencia = con.conectar().createStatement();
+            resultado = sentencia.executeQuery("SELECT idcuenta, idpadre, nombre, valor, saldo_deudor FROM cuenta WHERE catalogo_idcatalogo = "+idCatalogo+";");
+            DefaultTableModel model = new DefaultTableModel();
+
+            model.addColumn("Codigo");
+            model.addColumn("Codigo Padre");
+            model.addColumn("Nombre");
+            model.addColumn("Saldo");
+            model.addColumn("Deudor/Acrededor");
+            
+            int valor = 0;
+
+            while (resultado.next()) {
+                model.addRow(new Object[]{});
+                model.setValueAt(resultado.getString("idcuenta"), valor, 0);
+                model.setValueAt(resultado.getString("idpadre"), valor, 1);
+                model.setValueAt(resultado.getString("nombre"), valor, 2);
+                model.setValueAt("$" + resultado.getString("valor"), valor, 3);
+                if(resultado.getString("saldo_deudor").equals("0")){
+                    model.setValueAt("Deudor", valor, 4);
+                }else {
+                    model.setValueAt("Acrededor", valor, 4);
+                }
+                valor++;
+            }
+
+            table.setModel(model);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+
         }
         con.desconectar();
     }
 
-    
     
     
     /**
