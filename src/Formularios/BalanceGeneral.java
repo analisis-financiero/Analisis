@@ -33,8 +33,8 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     public BalanceGeneral() {
         initComponents();
         this.setIconImage(new ImageIcon(getClass().getResource("/icons/coins.png")).getImage());
-        jPinicioER.setVisible(true);
-        jPEsDefecto.setVisible(false);
+        jPinicioER.setVisible(false);
+     ;
     }
 
     /**
@@ -153,8 +153,21 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         jtCapitalContableAV = new javax.swing.JTable();
         jLabel59 = new javax.swing.JLabel();
         lblTotalCapitalAV = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        lblMSaldo = new javax.swing.JTextField();
+        lblMCodigo = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        lblMCuenta = new javax.swing.JTextField();
+        cmbMTipo = new javax.swing.JComboBox<>();
+        jPanel8 = new javax.swing.JPanel();
+        btnMModificar = new javax.swing.JButton();
+        btnMCancelar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         Imprimir = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Estados Financieros");
@@ -187,7 +200,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         ));
         jScrollPane1.setViewportView(jtIngresosEstadoResultado);
 
-        jPEsDefecto.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 238, 207));
+        jPEsDefecto.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 280, 207));
 
         jlTotalIngresos.setText("jlTotalIngresos");
         jPEsDefecto.add(jlTotalIngresos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 121, -1));
@@ -217,7 +230,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         ));
         jScrollPane2.setViewportView(jtGastosEstadoResultados);
 
-        jPEsDefecto.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 269, 207));
+        jPEsDefecto.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 300, 207));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -238,7 +251,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jlUtilidadEstadoResultado)
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,16 +263,16 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPEsDefecto.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 525, -1));
+        jPEsDefecto.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 525, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("Gastos:");
-        jPEsDefecto.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, -1));
+        jPEsDefecto.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
 
         jlTotalGastos.setText("jlTotalGastos");
         jPEsDefecto.add(jlTotalGastos, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 163, -1));
 
-        jPanel1.add(jPEsDefecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 400));
+        jPanel1.add(jPEsDefecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 620, 490));
 
         jPinicioER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -274,7 +287,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         btnEsPersonalizado.setText("Personalizado");
         jPinicioER.add(btnEsPersonalizado, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 181, -1, -1));
 
-        jPanel1.add(jPinicioER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 400));
+        jPanel1.add(jPinicioER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 380));
 
         jTabbedPane5.addTab("Estado de Resultado", jPanel1);
 
@@ -324,7 +337,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addGap(6, 6, 6)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
@@ -405,7 +418,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
                     .addComponent(jlTotalCapital, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -483,7 +496,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                                 .addComponent(jLabel53)
                                 .addGap(18, 18, 18)
                                 .addComponent(lblTotalActivosCorrientesBG, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 26, Short.MAX_VALUE)))
+                        .addGap(0, 101, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel30Layout.setVerticalGroup(
@@ -492,7 +505,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addGap(6, 6, 6)
                 .addComponent(jLabel52)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -536,7 +549,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                                 .addComponent(jLabel55)
                                 .addGap(18, 18, 18)
                                 .addComponent(lblTotalPasivosCorrientesBG, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 10, Short.MAX_VALUE)))
+                        .addGap(0, 86, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel31Layout.setVerticalGroup(
@@ -704,7 +717,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addGap(6, 6, 6)
                 .addComponent(jLabel64)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -812,7 +825,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                                 .addComponent(jLabel47)
                                 .addGap(18, 18, 18)
                                 .addComponent(lblTotalActivosCorrientesAV, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 26, Short.MAX_VALUE)))
+                        .addGap(0, 98, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel27Layout.setVerticalGroup(
@@ -918,7 +931,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                                 .addComponent(jLabel51)
                                 .addGap(18, 18, 18)
                                 .addComponent(lblTotalPasivosCorrientesAV, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 10, Short.MAX_VALUE)))
+                        .addGap(0, 83, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel29Layout.setVerticalGroup(
@@ -1037,7 +1050,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addGap(6, 6, 6)
                 .addComponent(jLabel58)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane23, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                .addComponent(jScrollPane23, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1099,6 +1112,58 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
 
         jTabbedPane5.addTab("Análisis vertical BG", jPanel26);
 
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Codigo", "Cuenta", "Saldo", "Deudor/Acrededor"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable1);
+
+        jPanel10.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 450, -1));
+        jPanel10.add(lblMSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 160, 30));
+
+        lblMCodigo.setText("codigo");
+        jPanel10.add(lblMCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel18.setText("Cuenta");
+        jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel19.setText("Saldo");
+        jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, -1, 20));
+        jPanel10.add(lblMCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 160, 30));
+
+        cmbMTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel10.add(cmbMTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 160, 30));
+
+        jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnMModificar.setText("Modificar");
+        btnMModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMModificarActionPerformed(evt);
+            }
+        });
+        jPanel8.add(btnMModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+
+        btnMCancelar.setText("Cancelar");
+        jPanel8.add(btnMCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
+
+        jPanel10.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 280, 290));
+
+        jTabbedPane5.addTab("Modificar Cuentas", jPanel10);
+
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cross.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -1118,6 +1183,17 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
             }
         });
 
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1130,17 +1206,20 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jlNombreEmpresa))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(Imprimir)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 815, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tipoUsuario)
                 .addGap(605, 605, 605)
                 .addComponent(idCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(Imprimir)
+                .addGap(18, 18, 18)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1152,19 +1231,22 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 .addGap(427, 427, 427))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlNombreEmpresa)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Imprimir)
-                    .addComponent(btnSalir))
-                .addGap(29, 29, 29))
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlNombreEmpresa)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Imprimir)
+                            .addComponent(btnSalir))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(636, 779));
+        setSize(new java.awt.Dimension(836, 740));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1205,6 +1287,10 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         jPEsDefecto.setVisible(true);
         jPinicioER.setVisible(false);
     }//GEN-LAST:event_btnEsDefectoActionPerformed
+
+    private void btnMModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMModificarActionPerformed
 
     public void mostrarEstadosFinancieros() {
         // Mostrar todos los estados Financieros:
@@ -1343,7 +1429,10 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JButton Imprimir;
     private javax.swing.JButton btnEsDefecto;
     private javax.swing.JButton btnEsPersonalizado;
+    private javax.swing.JButton btnMCancelar;
+    private javax.swing.JButton btnMModificar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JComboBox<String> cmbMTipo;
     public static final javax.swing.JLabel idCatalogo = new javax.swing.JLabel();
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1352,6 +1441,8 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1382,6 +1473,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPEsDefecto;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
@@ -1399,6 +1491,8 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPinicioER;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane17;
@@ -1414,8 +1508,10 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JScrollPane jScrollPane26;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane5;
+    private javax.swing.JTable jTable1;
     public static final javax.swing.JLabel jlNombreEmpresa = new javax.swing.JLabel();
     private javax.swing.JLabel jlTotalCapital;
     private javax.swing.JLabel jlTotalGastos;
@@ -1437,6 +1533,9 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JTable jtPasivosFijosAV;
     private javax.swing.JTable jtPasivosFijosBG;
     private javax.swing.JTable jtRetiros;
+    private javax.swing.JLabel lblMCodigo;
+    private javax.swing.JTextField lblMCuenta;
+    private javax.swing.JTextField lblMSaldo;
     private javax.swing.JLabel lblTotalActivosAV;
     private javax.swing.JLabel lblTotalActivosBG;
     private javax.swing.JLabel lblTotalActivosCorrientesAV;
