@@ -11,7 +11,7 @@ public class conexion {
     private String password = "admin";
     private String usuario = "root";
     private String direccionServidor = "localhost";
-    private String nombreBaseDatos = "conta2";
+    private String nombreBaseDatos = "conta";
     private Connection conexion = null;
 
     public Connection conectar() {
