@@ -5,7 +5,9 @@
 package Formularios;
 
 //import Operaciones.Operaciones;
+import Operaciones.OperacionesEmpresa;
 import Operaciones.OperacionesEstadosFinancieros;
+import clases.Cuenta;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.print.PageFormat;
@@ -17,24 +19,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.print.attribute.standard.PrinterName;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Tablo
  */
-
-public class BalanceGeneral extends javax.swing.JFrame implements Printable{
+public class BalanceGeneral extends javax.swing.JFrame implements Printable {
 
     /**
      * Creates new form BalanceGeneral
      */
     OperacionesEstadosFinancieros op = new OperacionesEstadosFinancieros();
-
+    OperacionesEmpresa opModificar = new OperacionesEmpresa();
     public BalanceGeneral() {
         initComponents();
         this.setIconImage(new ImageIcon(getClass().getResource("/icons/coins.png")).getImage());
         jPinicioER.setVisible(false);
-     ;
+        ;
     }
 
     /**
@@ -155,16 +157,18 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         lblTotalCapitalAV = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        lblMSaldo = new javax.swing.JTextField();
+        jTModificar = new javax.swing.JTable();
         lblMCodigo = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        lblMCuenta = new javax.swing.JTextField();
+        txtMCuenta = new javax.swing.JTextField();
         cmbMTipo = new javax.swing.JComboBox<>();
         jPanel8 = new javax.swing.JPanel();
         btnMModificar = new javax.swing.JButton();
         btnMCancelar = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        txtMSaldo = new javax.swing.JTextField();
+        txtMIdPadre = new javax.swing.JTextField();
         btnSalir = new javax.swing.JButton();
         Imprimir = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
@@ -1114,8 +1118,8 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
 
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTModificar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTModificar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1126,10 +1130,14 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 "Codigo", "Cuenta", "Saldo", "Deudor/Acrededor"
             }
         ));
-        jScrollPane5.setViewportView(jTable1);
+        jTModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTModificarMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(jTModificar);
 
         jPanel10.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 450, -1));
-        jPanel10.add(lblMSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 160, 30));
 
         lblMCodigo.setText("codigo");
         jPanel10.add(lblMCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, -1, -1));
@@ -1137,13 +1145,9 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
         jLabel18.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel18.setText("Cuenta");
         jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, -1, -1));
+        jPanel10.add(txtMCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 160, 30));
 
-        jLabel19.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel19.setText("Saldo");
-        jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, -1, 20));
-        jPanel10.add(lblMCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 160, 30));
-
-        cmbMTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbMTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deudor", "Acrededor" }));
         jPanel10.add(cmbMTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 160, 30));
 
         jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1155,12 +1159,27 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
                 btnMModificarActionPerformed(evt);
             }
         });
-        jPanel8.add(btnMModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+        jPanel8.add(btnMModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
         btnMCancelar.setText("Cancelar");
-        jPanel8.add(btnMCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
+        btnMCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMCancelarActionPerformed(evt);
+            }
+        });
+        jPanel8.add(btnMCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
 
-        jPanel10.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 280, 290));
+        jLabel19.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel19.setText("ID Padre");
+        jPanel8.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, 20));
+
+        jLabel22.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel22.setText("Saldo");
+        jPanel8.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, 20));
+        jPanel8.add(txtMSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 160, 30));
+        jPanel8.add(txtMIdPadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 120, 30));
+
+        jPanel10.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 280, 330));
 
         jTabbedPane5.addTab("Modificar Cuentas", jPanel10);
 
@@ -1273,14 +1292,14 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
 
     private void ImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirActionPerformed
         // TODO add your handling code here:
-          try {
-  PrinterJob job = PrinterJob.getPrinterJob();
-  job.setPrintable(this);
-  job.printDialog();
-  job.print();
-} catch (PrinterException ex) {
-  Logger.getLogger(PrinterName.class.getName()).log(Level.SEVERE, "prueba", ex);
-}
+        try {
+            PrinterJob job = PrinterJob.getPrinterJob();
+            job.setPrintable(this);
+            job.printDialog();
+            job.print();
+        } catch (PrinterException ex) {
+            Logger.getLogger(PrinterName.class.getName()).log(Level.SEVERE, "prueba", ex);
+        }
     }//GEN-LAST:event_ImprimirActionPerformed
 
     private void btnEsDefectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsDefectoActionPerformed
@@ -1289,9 +1308,70 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     }//GEN-LAST:event_btnEsDefectoActionPerformed
 
     private void btnMModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMModificarActionPerformed
-        // TODO add your handling code here:
+         if (txtMCuenta.getText().trim().isEmpty() || txtMIdPadre.getText().trim().isEmpty() || txtMSaldo.getText().trim().isEmpty() || lblMCodigo.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No ha ingresado todos los valores", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            int id_cuenta = Integer.parseInt(lblMCodigo.getText());
+            int id_padre = Integer.parseInt(txtMIdPadre.getText());
+            double valor = Double.parseDouble(txtMSaldo.getText());
+            String tipo = "Deudor";
+            int tipo_saldo;
+
+            if (tipo.equals(cmbMTipo.getSelectedItem())) {
+                tipo_saldo = 0;
+            } else {
+                tipo_saldo = 1;
+            }
+
+            int idcatalogo = Integer.parseInt(idCatalogo.getText().trim());
+
+            Cuenta cuen = new Cuenta(id_cuenta, txtMCuenta.getText(), valor, id_padre, idcatalogo, tipo_saldo);
+            try{
+                opModificar.UpdaCuenta(cuen);
+            }catch(Exception ex){
+                System.out.println("Problemas al modificar la cuenta "+ex);
+            }
+            
+            limpiarModificar();
+        }
     }//GEN-LAST:event_btnMModificarActionPerformed
 
+    private void jTModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTModificarMouseClicked
+        int fila = jTModificar.getSelectedRow();
+        System.out.println("Fila " + fila);
+     
+                
+
+        try {
+            lblMCodigo.setText(jTModificar.getValueAt(fila, 0).toString());
+            txtMIdPadre.setText(jTModificar.getValueAt(fila, 1).toString());
+            txtMCuenta.setText(jTModificar.getValueAt(fila, 2).toString());
+            txtMSaldo.setText(jTModificar.getValueAt(fila, 3).toString().replace("$", ""));
+            if (jTModificar.getValueAt(fila, 4).toString().equals("Deudor")) {
+                cmbMTipo.setSelectedIndex(0);
+            } else {
+                cmbMTipo.setSelectedIndex(1);
+            }
+
+        } catch (Exception ex) {
+            System.out.println("Error " + ex);
+
+        }
+    }//GEN-LAST:event_jTModificarMouseClicked
+
+    private void btnMCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMCancelarActionPerformed
+        limpiarModificar();
+        cmbMTipo.setSelectedIndex(0);
+        txtMCuenta.requestFocus();
+    }//GEN-LAST:event_btnMCancelarActionPerformed
+
+    public void limpiarModificar(){
+            lblMCodigo.setText("");
+            txtMIdPadre.setText("");
+            txtMCuenta.setText("");
+            txtMSaldo.setText("");
+    }
     public void mostrarEstadosFinancieros() {
         // Mostrar todos los estados Financieros:
         int id_catalogo = Integer.parseInt(idCatalogo.getText());
@@ -1317,73 +1397,67 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
 
         capital = capital.setScale(2, RoundingMode.HALF_UP);
         jlTotalCapital.setText("$" + capital);
-       
 
-        
         //Para el BG
         op.balanceGeneralActivosCorrientes(jtActivosCorrientesBG, id_catalogo);
         BigDecimal saldoActivosCorrientesBG = new BigDecimal(String.valueOf(op.getSaldoActivosCorrientes()));
         saldoActivosCorrientesBG = saldoActivosCorrientesBG.setScale(2, RoundingMode.HALF_UP);
         lblTotalActivosCorrientesBG.setText("$" + saldoActivosCorrientesBG);
-        
+
         op.balanceGeneralActivosFijos(jtActivosFijosBG, id_catalogo);
         BigDecimal saldoActivosFijosBG = new BigDecimal(String.valueOf(op.getSaldoActivosFijos()));
         saldoActivosFijosBG = saldoActivosFijosBG.setScale(2, RoundingMode.HALF_UP);
         lblTotalActivosFijosBG.setText("$" + saldoActivosFijosBG);
-       
+
         lblTotalActivosBG.setText("$" + (saldoActivosCorrientesBG.doubleValue() + saldoActivosFijosBG.doubleValue()));
 
-        
         op.balanceGeneralPasivosCorrientes(jtPasivosCorrientesBG, id_catalogo);
         BigDecimal saldoPasivosCorrientesBG = new BigDecimal(String.valueOf(op.getSaldoPasivosCorrientes()));
         saldoPasivosCorrientesBG = saldoPasivosCorrientesBG.setScale(2, RoundingMode.HALF_UP);
         lblTotalPasivosCorrientesBG.setText("$" + saldoPasivosCorrientesBG);
         capital = capital.add(saldoPasivosCorrientesBG);
-        
+
         op.balanceGeneralPasivosFijos(jtPasivosFijosBG, id_catalogo);
         BigDecimal saldoPasivosFijosBG = new BigDecimal(String.valueOf(op.getSaldoPasivosFijos()));
         saldoPasivosFijosBG = saldoPasivosFijosBG.setScale(2, RoundingMode.HALF_UP);
         lblTotalPasivosFijosBG.setText("$" + saldoPasivosFijosBG);
         capital = capital.add(saldoPasivosFijosBG);
-        
-        lblTotalPasivosBG.setText("$" + (saldoPasivosCorrientesBG.doubleValue() + saldoPasivosFijosBG.doubleValue()));        
+
+        lblTotalPasivosBG.setText("$" + (saldoPasivosCorrientesBG.doubleValue() + saldoPasivosFijosBG.doubleValue()));
 
 //---------------------------------
-        
-        
         //Para el analisis vertical BG
         op.balanceGeneralActivosCorrientes(jtActivosCorrientesAV, id_catalogo);
         BigDecimal saldoActivosCorrientesAV = new BigDecimal(String.valueOf(op.getSaldoActivosCorrientes()));
         saldoActivosCorrientesAV = saldoActivosCorrientesAV.setScale(2, RoundingMode.HALF_UP);
         lblTotalActivosCorrientesAV.setText("$" + saldoActivosCorrientesAV);
         //jlTotalLadoActivos.setText("$" + saldoActivos);
-        
+
         op.balanceGeneralActivosFijos(jtActivosFijosAV, id_catalogo);
         BigDecimal saldoActivosFijosAV = new BigDecimal(String.valueOf(op.getSaldoActivosFijos()));
         saldoActivosFijosAV = saldoActivosFijosAV.setScale(2, RoundingMode.HALF_UP);
         lblTotalActivosFijosAV.setText("$" + saldoActivosFijosAV);
         lblTotalActivosAV.setText("$" + (saldoActivosCorrientesAV.doubleValue() + saldoActivosFijosAV.doubleValue()));
-        
+
         op.balanceGeneralPasivosCorrientes(jtPasivosCorrientesAV, id_catalogo);
         BigDecimal saldoPasivosCorrientesAV = new BigDecimal(String.valueOf(op.getSaldoPasivosCorrientes()));
         saldoPasivosCorrientesAV = saldoPasivosCorrientesAV.setScale(2, RoundingMode.HALF_UP);
         lblTotalPasivosCorrientesAV.setText("$" + saldoPasivosCorrientesAV);
-        
+
         op.balanceGeneralPasivosFijos(jtPasivosFijosAV, id_catalogo);
         BigDecimal saldoPasivosFijosAV = new BigDecimal(String.valueOf(op.getSaldoPasivosFijos()));
         saldoPasivosFijosAV = saldoPasivosFijosAV.setScale(2, RoundingMode.HALF_UP);
         lblTotalPasivosFijosAV.setText("$" + saldoPasivosFijosAV);
         lblTotalPasivosAV.setText("$" + (saldoPasivosCorrientesAV.doubleValue() + saldoPasivosFijosAV.doubleValue()));
-        
+
         capital = capital.setScale(2, RoundingMode.HALF_UP);
         jlTotalCapital.setText("$" + capital);
         //--------------------------------------
 
-        
-        
+        //Modificar Cuentas
+        op.allCuentas(jTModificar, id_catalogo);
+
     }
-    
-  
 
     /**
      * @param args the command line arguments
@@ -1444,6 +1518,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel46;
@@ -1510,8 +1585,8 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JTable jTModificar;
     private javax.swing.JTabbedPane jTabbedPane5;
-    private javax.swing.JTable jTable1;
     public static final javax.swing.JLabel jlNombreEmpresa = new javax.swing.JLabel();
     private javax.swing.JLabel jlTotalCapital;
     private javax.swing.JLabel jlTotalGastos;
@@ -1534,8 +1609,6 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JTable jtPasivosFijosBG;
     private javax.swing.JTable jtRetiros;
     private javax.swing.JLabel lblMCodigo;
-    private javax.swing.JTextField lblMCuenta;
-    private javax.swing.JTextField lblMSaldo;
     private javax.swing.JLabel lblTotalActivosAV;
     private javax.swing.JLabel lblTotalActivosBG;
     private javax.swing.JLabel lblTotalActivosCorrientesAV;
@@ -1551,21 +1624,24 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable{
     private javax.swing.JLabel lblTotalPasivosFijosAV;
     private javax.swing.JLabel lblTotalPasivosFijosBG;
     public static final javax.swing.JLabel tipoUsuario = new javax.swing.JLabel();
+    private javax.swing.JTextField txtMCuenta;
+    private javax.swing.JTextField txtMIdPadre;
+    private javax.swing.JTextField txtMSaldo;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
-         if (pageIndex > 0) { /* We have only one page, and 'page' is zero-based */
-  return NO_SUCH_PAGE;
-}
+        if (pageIndex > 0) {
+            /* We have only one page, and 'page' is zero-based */
+            return NO_SUCH_PAGE;
+        }
 
-Graphics2D g2d = (Graphics2D)graphics;
-g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
+        Graphics2D g2d = (Graphics2D) graphics;
+        g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
 
-jPanel3.printAll(graphics);
+        jPanel3.printAll(graphics);
 
-
-return PAGE_EXISTS;
+        return PAGE_EXISTS;
 
     }
 }

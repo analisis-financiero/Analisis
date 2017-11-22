@@ -49,7 +49,6 @@ public class OperacionesEmpresa {
             if (result2.next()) {
                 JOptionPane.showMessageDialog(null, "Ya existe una cuenta con ese ID", "Advertencia", JOptionPane.WARNING_MESSAGE);
             } else {
-
                 int updateRows = 0;
                 PreparedStatement sentencia = con.conectar().prepareStatement("INSERT INTO cuenta (idcuenta, nombre, valor, idpadre, catalogo_idcatalogo, saldo_deudor) VALUES (?,?,?,?,?,?)");
                 sentencia.setInt(1, cuenta.getId());
@@ -66,7 +65,37 @@ public class OperacionesEmpresa {
                     JOptionPane.showMessageDialog(null, "Error Critico: ¡¡¡Verificar Datos!!!");
                 }
                 con.desconectar();
+
             }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void UpdaCuenta(Cuenta cuenta) {
+        try {
+
+            Statement sentenc2 = con.conectar().createStatement();
+
+            int updateRows = 0;
+            PreparedStatement sentencia = con.conectar().prepareStatement("UPDATE cuenta SET nombre = ?,  valor = ?,  idpadre = ?,  saldo_deudor = ?  WHERE  idcuenta = ? and catalogo_idcatalogo = ?;");
+            
+            sentencia.setString(1, cuenta.getNombre());
+            sentencia.setDouble(2, cuenta.getValor());
+            sentencia.setInt(3, cuenta.getIdPadre());
+
+            sentencia.setInt(4, cuenta.getTipo_saldo());
+            sentencia.setInt(5, cuenta.getId());
+            sentencia.setInt(6, cuenta.getIdcatalogo());
+
+            updateRows = sentencia.executeUpdate();
+            if (updateRows == 1) {
+                JOptionPane.showMessageDialog(null, "Cuenta Modificada exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "Error Critico: ¡¡¡Verificar Datos!!!");
+            }
+            con.desconectar();
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -134,7 +163,6 @@ public class OperacionesEmpresa {
             result.last();
             while (result2.next()) {
                 int idecatalogo = result2.getInt("idcatalogo");
-
 
                 if (tipo == 0) {
                     PreparedStatement senc = con.conectar().prepareStatement("INSERT INTO cuenta (idcuenta, nombre, idpadre, catalogo_idcatalogo, saldo_deudor,valor) VALUES (1, 'Activos',0," + idecatalogo + ",0,0), (2,'Pasivos',0," + idecatalogo + ",1,0), (3, 'Capital',0," + idecatalogo + ",1,0), "
