@@ -10,10 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author tito
- */
+
 public class EliminarCuenta extends javax.swing.JFrame {
 
     /**

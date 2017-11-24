@@ -3,10 +3,7 @@
  */
 package clases;
 
-/**
- *
- * @author Tablo
- */
+
 public class Cuenta {
     
     private double valor;

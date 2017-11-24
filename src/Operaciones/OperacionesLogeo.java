@@ -11,10 +11,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Tablo
- */
+
 public class OperacionesLogeo {
 
     conexion con = new conexion();

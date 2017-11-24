@@ -4,10 +4,7 @@
  */
 package Formularios;
 
-/**
- *
- * @author Tablo
- */
+
 class Razonesliquidez {
 
     public Razonesliquidez() {

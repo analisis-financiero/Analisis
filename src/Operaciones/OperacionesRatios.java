@@ -5,10 +5,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Tablo
- */
+
 public class OperacionesRatios {
 
     conexion con = new conexion();

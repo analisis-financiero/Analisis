@@ -6,10 +6,7 @@ package Formularios;
 
 import Operaciones.OperacionesEmpresa;
 
-/**
- *
- * @author Tablo
- */
+
 public class libroDiario extends javax.swing.JFrame {
 
     /**

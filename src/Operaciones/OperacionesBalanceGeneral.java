@@ -11,10 +11,7 @@ import java.sql.Statement;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Tablo
- */
+
 public class OperacionesBalanceGeneral {
 
     private double saldoCapital = 0;

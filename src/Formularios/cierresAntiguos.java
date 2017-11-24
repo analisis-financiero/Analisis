@@ -6,10 +6,6 @@ package Formularios;
 
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author Tablo
- */
 public class cierresAntiguos extends javax.swing.JFrame {
 
     /**

@@ -4,10 +4,7 @@
  */
 package ratios;
 
-/**
- *
- * @author Tablo
- */
+
 public class RazonesAplacamiento {
     
     public double endeudamiento(double totPasivo, double totActivo){

@@ -10,10 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Tablo
- */
+
 public class logeo extends javax.swing.JFrame {
 
     OperacionesLogeo op = new OperacionesLogeo();

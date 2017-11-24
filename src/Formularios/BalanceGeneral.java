@@ -148,8 +148,6 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable {
         jTModificar = new javax.swing.JTable();
         lblMCodigo = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        txtMCuenta = new javax.swing.JTextField();
-        cmbMTipo = new javax.swing.JComboBox<>();
         jPanel8 = new javax.swing.JPanel();
         btnMModificar = new javax.swing.JButton();
         btnMCancelar = new javax.swing.JButton();
@@ -157,6 +155,8 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable {
         jLabel22 = new javax.swing.JLabel();
         txtMSaldo = new javax.swing.JTextField();
         txtMIdPadre = new javax.swing.JTextField();
+        txtMCuenta = new javax.swing.JTextField();
+        cmbMTipo = new javax.swing.JComboBox<>();
         btnSalir = new javax.swing.JButton();
         Imprimir = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
@@ -555,7 +555,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable {
                                 .addComponent(lblTotalPasivosCorrientesBG, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(lblPasivosCorrientesAV, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 22, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel31Layout.setVerticalGroup(
@@ -880,10 +880,6 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable {
         jLabel18.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel18.setText("Cuenta");
         jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, -1, -1));
-        jPanel10.add(txtMCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 160, 30));
-
-        cmbMTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deudor", "Acrededor" }));
-        jPanel10.add(cmbMTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 160, 30));
 
         jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -913,6 +909,10 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable {
         jPanel8.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, 20));
         jPanel8.add(txtMSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 160, 30));
         jPanel8.add(txtMIdPadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 120, 30));
+        jPanel8.add(txtMCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 160, 30));
+
+        cmbMTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deudor", "Acrededor" }));
+        jPanel8.add(cmbMTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 160, 30));
 
         jPanel10.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 280, 330));
 
@@ -1098,6 +1098,7 @@ public class BalanceGeneral extends javax.swing.JFrame implements Printable {
             System.out.println("Error " + ex);
 
         }
+        txtMSaldo.requestFocus();
     }//GEN-LAST:event_jTModificarMouseClicked
 
     private void btnMCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMCancelarActionPerformed

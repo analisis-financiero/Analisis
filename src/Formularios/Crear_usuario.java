@@ -7,10 +7,7 @@ package Formularios;
 import Operaciones.OperacionesCrearUsuario;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Tablo
- */
+
 public class Crear_usuario extends javax.swing.JFrame {
     
     OperacionesCrearUsuario op=new OperacionesCrearUsuario();

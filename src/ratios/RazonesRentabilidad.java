@@ -4,10 +4,7 @@
  */
 package ratios;
 
-/** 
- *
- * @author USUARIO
- */
+
 public class RazonesRentabilidad {
     
     public double marUtilidadBruta(double ventas, double costoVentas){

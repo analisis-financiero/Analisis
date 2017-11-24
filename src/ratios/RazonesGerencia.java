@@ -4,10 +4,7 @@
  */
 package ratios;
 
-/**
- *
- * @author USUARIO
- */
+
 public class RazonesGerencia {
 
     public double diasInventarios(double inventario, double ventas) {

@@ -9,10 +9,7 @@ import Operaciones.OperacionesCierres;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Tablo
- */
+
 public class indexHome extends javax.swing.JFrame {
 
     logeo tito = new logeo();

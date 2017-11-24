@@ -8,10 +8,7 @@ import Operaciones.OperacionesUsuario;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Tablo
- */
+
 public class CrearUsuario extends javax.swing.JFrame {
 
     OperacionesUsuario op = new OperacionesUsuario();

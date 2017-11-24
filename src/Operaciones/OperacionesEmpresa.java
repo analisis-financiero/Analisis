@@ -14,10 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Tablo
- */
+
 public class OperacionesEmpresa {
 
     conexion con = new conexion();

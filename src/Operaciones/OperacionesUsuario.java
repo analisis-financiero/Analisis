@@ -10,10 +10,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Tablo
- */
+
 public class OperacionesUsuario {
     
      conexion con = new conexion();

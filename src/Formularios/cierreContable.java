@@ -13,10 +13,7 @@ import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Tablo
- */
+
 public class cierreContable extends javax.swing.JFrame {
 
     /**

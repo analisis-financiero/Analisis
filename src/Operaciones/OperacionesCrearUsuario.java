@@ -7,10 +7,7 @@ package Operaciones;
 import conexion.conexion;
 import java.sql.PreparedStatement;
 
-/**
- *
- * @author Tablo
- */
+
 public class OperacionesCrearUsuario {
     
      conexion con = new conexion();

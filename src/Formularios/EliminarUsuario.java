@@ -11,10 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author tito
- */
+
 public class EliminarUsuario extends javax.swing.JFrame {
 
     /**

@@ -4,10 +4,7 @@
  */
 package clases;
 
-/**
- *
- * @author Tablo
- */
+
 public class Empresa {
 
    private String nombre;

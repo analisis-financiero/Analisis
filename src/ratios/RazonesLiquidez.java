@@ -4,10 +4,7 @@
  */
 package ratios;
 
-/**
- *
- * @author USUARIO
- */
+
 public class RazonesLiquidez {
 
     public double capitalTrabajo(double activoCirculante, double pasivoCirculante) {

@@ -18,10 +18,7 @@ import ratios.RazonesGerencia;
 import ratios.RazonesLiquidez;
 import ratios.RazonesRentabilidad;
 
-/**
- *
- * @author Tablo
- */
+
 public class RatiosForm extends javax.swing.JFrame {
 
     /**
@@ -247,7 +244,7 @@ public class RatiosForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlEudeudamientoCorto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, Short.MAX_VALUE)
                     .addComponent(btnQueEndeudamientoCorto, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -288,7 +285,7 @@ public class RatiosForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlEndeudamientoLargo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, Short.MAX_VALUE)
                     .addComponent(btnQueEndeudamientoLargo, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -507,7 +504,7 @@ public class RatiosForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlCapitalizacionInterna, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, Short.MAX_VALUE)
                     .addComponent(btnQueCapInter, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1913,8 +1910,6 @@ public class RatiosForm extends javax.swing.JFrame {
     private javax.swing.JButton btnUtilidadNeta;
     private javax.swing.JButton btnqueRazonAcida;
     private javax.swing.JButton btnqueRazonCirculante;
-    private javax.swing.JButton btnqueRazonCirculante1;
-    private javax.swing.JButton btnqueRazonCirculante2;
     public static final javax.swing.JLabel idCatalogo = new javax.swing.JLabel();
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -1922,8 +1917,6 @@ public class RatiosForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -1964,8 +1957,6 @@ public class RatiosForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel3;
@@ -2010,8 +2001,6 @@ public class RatiosForm extends javax.swing.JFrame {
     private javax.swing.JLabel jlUtilidadNeta;
     private javax.swing.JLabel jlrazonAcida;
     private javax.swing.JLabel jlrazonCirculante;
-    private javax.swing.JLabel jlrazonCirculante1;
-    private javax.swing.JLabel jlrazonCirculante2;
     private javax.swing.JLabel jlrenSobCapTrabajo;
     private javax.swing.JLabel jlrendSobActivos;
     private javax.swing.JLabel jlrendSobPatrimonio;

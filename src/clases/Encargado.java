@@ -4,10 +4,7 @@
  */
 package clases;
 
-/**
- *
- * @author tito
- */
+
 public class Encargado {
 
     private String nombres;

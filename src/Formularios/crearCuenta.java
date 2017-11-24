@@ -9,10 +9,7 @@ import Operaciones.OperacionesEmpresa;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author zaldana
- */
+
 public class crearCuenta extends javax.swing.JFrame {
 
     OperacionesEmpresa op = new OperacionesEmpresa();

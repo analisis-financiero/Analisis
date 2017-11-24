@@ -18,10 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 
-/**
- *
- * @author Tablo
- */
+
 public class BalanceComprobacion extends javax.swing.JFrame {
 
     OperacionesBalanceComprobacion op = new OperacionesBalanceComprobacion();
